@@ -1,0 +1,12 @@
+[package]
+name = "orm_bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+diesel = { version = "2.0.2", features = ["sqlite"] }
+prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.3" }
+prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.3" }
+serde = "1.0.152"
+tokio = "1.23.0"
+uuid = "1.2.2"
