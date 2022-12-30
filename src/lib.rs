@@ -5,7 +5,7 @@ use diesel::prelude::*;
 pub mod constants;
 
 use crate::constants::ABSOLUTE_FILE_PATH;
-use crate::models::NewUser;
+use crate::models::{NewUser, UserModel};
 use crate::schema::users;
 
 pub fn establish_connection() -> SqliteConnection {
@@ -31,11 +31,11 @@ pub fn delete_user(conn: &mut SqliteConnection, param_id: &str) -> usize {
         .expect("Error deleting user")
 }
 
-// pub fn find_user(conn: &mut SqliteConnection, param_id: &str) {
-//     use crate::schema::users::dsl::*;
-//
-//     users.filter(id.eq(param_id))
-//         .limit(1)
-//         .load::<users>(conn)
-//         .expect("Error loading posts");
-// }
+pub fn find_user(conn: &mut SqliteConnection, param_id: &str) {
+    use crate::schema::users::dsl::*;
+
+    users
+        .filter(id.eq(param_id))
+        .load::<UserModel>(conn)
+        .expect("Error loading posts");
+}

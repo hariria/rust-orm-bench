@@ -1,7 +1,7 @@
 use super::schema::users;
 use diesel::prelude::*;
 
-#[derive(Queryable)]
+#[derive(Queryable, Debug)]
 pub struct UserModel {
     pub id: String,
     pub display_name: String,
