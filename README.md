@@ -51,20 +51,21 @@ the operations are done serially and without concurrent operations.
 # and ID. For more info see the prisma/schema.prisma file
 
 Running diesel benchmarks...
-Create users elapsed 3.05s
-Delete users elapsed 4.30s
+Create users elapsed 4.94s
+Find users elapsed 110.16ms
+Delete users elapsed 3.62s
 
 
 Running prisma benchmarks...
-Create users elapsed 8.13s
-Find users elapsed 2.42s
-Delete users elapsed 7.99s
+Create users elapsed 8.53s
+Find users elapsed 2.41s
+Delete users elapsed 7.40s
 
 
 Running prisma raw sql benchmarks...
-Create users elapsed 4.14s
-Find users elapsed 1.36s
-Delete users elapsed 3.84s
+Create users elapsed 3.74s
+Find users elapsed 1.38s
+Delete users elapsed 3.76s
 ```
 
 I hope to add many more benchmarks soon. If you have any ideas
