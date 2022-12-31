@@ -19,7 +19,8 @@ Some of the more popular ORMs include:
 [SQLx](https://github.com/launchbadge/sqlx) is another popular 
 option but is not considered an ORM, see 
 [here](https://github.com/launchbadge/sqlx#sqlx-is-not-an-orm) 
-for more details.
+for more details. I may benchmark this as well in the future out
+of curiosity but for now will not include it.
 
 ### Getting started
 

@@ -20,11 +20,10 @@ fn generate_guids() -> Vec<String> {
     result
 }
 
-#[tokio::main]
+#[tokio::main(flavor = "multi_thread", worker_threads = 16)]
 async fn main() {
-    let client: PrismaClient = PrismaClient::_builder().build().await.unwrap();
     let guids = generate_guids();
     run_diesel_benchmark(&guids);
-    run_prisma_benchmark(&client, &guids).await;
-    run_prisma_raw_sql_benchmark(&client, &guids).await;
+    run_prisma_benchmark(&guids).await;
+    run_prisma_raw_sql_benchmark(&guids).await;
 }
